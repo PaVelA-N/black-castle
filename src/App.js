@@ -18,10 +18,11 @@ function App() {
 }
 
 function Body() {
-  let props_=1
-  // props.book = require("./books/data1.json");
+  let props ={}
+  props.bookName='Черный замок'
+  props.bookData = require("./books/data1.json");
   return (
-    createTable(props_)
+    createTable(props)
   )
 }
 
@@ -63,8 +64,7 @@ function Footer() {
   )
 }
 
-function createTable(props_) {
-  var s = `hello ${props_}`
+function createTable(props) {
   return (
     <table>
       <thead>
@@ -74,11 +74,70 @@ function createTable(props_) {
           <td>Инвентори</td>
         </tr>
       </thead>
-        {/* <tbody>{MainFunction2(obj1, obj2,diffObj1,diffObj2)}</tbody> */}
+      <tbody>
+        <tr>
           <td>Левый столбец 2</td>
-          <td>Текст {s}</td>
+          <td>{props.bookData.paragraphNumber}<br></br>{props.bookData.paragraphText} </td>
           <td>Инвентори 2</td>
+        </tr>
+        <tr>
+          {/* <tbody>{MainFunction2(obj1, obj2,diffObj1,diffObj2)}</tbody> */}
+
+          <td>{availableChoice(props)}</td>
+        </tr>
+      </tbody>
     </table>
+  );
+}
+
+function availableChoice (props){
+  return (<table>
+    <tbody>
+      <tr>
+        <td>
+          Ваш выбор: 
+        </td>
+        <td>
+          {Square(props)}
+        </td>
+      </tr>
+    </tbody>
+  </table>)
+}
+
+function choiceButtons(props){
+  const choiceArray  = props.bookData.paragraphPublicLink;
+  // console.log(props)
+  console.log(choiceArray)
+  let x = [...Array(choiceArray.length)].map(row => {return (<tr>
+    <div>1</div>
+  </tr>
+)})
+  console.log('114 ', x)
+
+  return (<tbody>
+      
+  </tbody>)
+}
+
+// onClick={props.onClick2}
+function Square (props) {
+  // console.log('Square ', props);
+  return (
+    <button className="square"> 
+      {props.bookData.paragraphPublicLink[0]}
+    </button>
+  );
+}
+
+function renderSquare(props) {
+  // console.log('renderSquare ', props.squares[i] + ' i: ' + i);
+  return (
+    <Square 
+      key={`square_` + props}
+      value={props}
+      // onClick2={() => onClick1()} 
+    />
   );
 }
 

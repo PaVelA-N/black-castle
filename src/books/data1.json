@@ -1,10 +1,5 @@
 {
-  "name": "my-app1",
-  "private": true,
-  "dependencies": {
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start"
-  }
+  "paragraphNumber": 1,
+  "paragraphText": "текстПараграфа1",
+  "paragraphPublicLink": [2,3]
 }
