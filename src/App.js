@@ -18,8 +18,13 @@ function App() {
           Learn React
         </a>
       </header>
+      <p>test</p>
     </div>
   );
+}
+
+function Header() {
+  
 }
 
 export default App;
