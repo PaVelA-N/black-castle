@@ -1,9 +1,5 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-
-
-let props=1
-// props.book = require("./books/data1.json");
 
 function App() {
   return (
@@ -22,8 +18,10 @@ function App() {
 }
 
 function Body() {
+  let props_=1
+  // props.book = require("./books/data1.json");
   return (
-    createTable()
+    createTable(props_)
   )
 }
 
@@ -35,10 +33,10 @@ function Header() {
     Edit <code>src/App.js</code> and save to reload.
   </p>
   <a
-    // className="App-link"
-    // href="https://reactjs.org"
-    // target="_blank"
-    // rel="noopener noreferrer"
+    className="App-link"
+    href="https://reactjs.org"
+    target="_blank"
+    rel="noopener noreferrer"
   >
     Learn React
   </a>
@@ -51,13 +49,13 @@ function Footer() {
     <>
   {/* <img src={logo} className="App-logo" alt="logo" /> */}
   <p>
-    {/* Edit <code>src/App.js</code> and save to reload. */}
+    Edit <code>src/App.js</code> and save to reload.
   </p>
   <a
-  //   className="App-link"
-  //   href="https://reactjs.org"
-  //   target="_blank"
-  //   rel="noopener noreferrer"
+    className="App-link"
+    href="https://reactjs.org"
+    target="_blank"
+    rel="noopener noreferrer"
   >
   Learn React
   </a>
@@ -65,7 +63,8 @@ function Footer() {
   )
 }
 
-function createTable(props) {
+function createTable(props_) {
+  var s = `hello ${props_}`
   return (
     <table>
       <thead>
@@ -77,7 +76,7 @@ function createTable(props) {
       </thead>
         {/* <tbody>{MainFunction2(obj1, obj2,diffObj1,diffObj2)}</tbody> */}
           <td>Левый столбец 2</td>
-          <td>Текст 2</td>
+          <td>Текст {s}</td>
           <td>Инвентори 2</td>
     </table>
   );
